@@ -25,8 +25,7 @@ class ToDoLimitOffsetPagination(LimitOffsetPagination):
 class ToDoViewSet(ModelViewSet):
     serializer_class = ToDoSerializer
     queryset = ToDo.objects.all()
-    filterset_fields = ['project', 'text',
-                        'create', 'update', 'creator', 'is_active']
+    filterset_fields = ["project", "text", "create", "update", "creator", "is_active"]
     pagination_class = ToDoLimitOffsetPagination
 
     def destroy(self, request, *args, **kwargs):
