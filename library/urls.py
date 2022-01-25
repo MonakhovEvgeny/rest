@@ -8,8 +8,8 @@ from todoapp.views import ToDoViewSet, ProjectViewSet
 router = DefaultRouter()
 router.register("authors", AuthorModelViewSet)
 router.register("user", UserModelViewSet)
-router.register('todos', ToDoViewSet)
-router.register('projects', ProjectViewSet)
+router.register("todos", ToDoViewSet)
+router.register("projects", ProjectViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

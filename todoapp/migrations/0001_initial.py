@@ -8,30 +8,28 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('user', '0002_alter_user_uuid'),
-    ]
+    dependencies = [("user", "0002_alter_user_uuid")]
 
     operations = [
         migrations.CreateModel(
-            name='Project',
+            name="Project",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=32, unique=True)),
-                ('repository', models.URLField(blank=True)),
-                ('users', models.ManyToManyField(to='user.User')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("name", models.CharField(max_length=32, unique=True)),
+                ("repository", models.URLField(blank=True)),
+                ("users", models.ManyToManyField(to="user.User")),
             ],
         ),
         migrations.CreateModel(
-            name='ToDo',
+            name="ToDo",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField()),
-                ('create', models.DateTimeField(auto_now_add=True)),
-                ('update', models.DateTimeField(auto_now=True)),
-                ('is_active', models.BooleanField(default=True)),
-                ('creator', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='user.user')),
-                ('project', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='todoapp.project')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("text", models.TextField()),
+                ("create", models.DateTimeField(auto_now_add=True)),
+                ("update", models.DateTimeField(auto_now=True)),
+                ("is_active", models.BooleanField(default=True)),
+                ("creator", models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to="user.user")),
+                ("project", models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="todoapp.project")),
             ],
         ),
     ]

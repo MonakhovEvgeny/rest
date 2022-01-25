@@ -12,7 +12,7 @@ class ProjectSerializer(ModelSerializer):
 
     class Meta:
         model = Project
-        fields = '__all__'
+        fields = "__all__"
 
 
 class ToDoSerializer(ModelSerializer):
@@ -21,4 +21,4 @@ class ToDoSerializer(ModelSerializer):
 
     class Meta:
         model = ToDo
-        exclude = ('is_active',)
+        exclude = ("is_active",)
