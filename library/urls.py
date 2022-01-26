@@ -4,6 +4,7 @@ from rest_framework.routers import DefaultRouter
 from authors.views import AuthorModelViewSet
 from user.views import UserModelViewSet
 from todoapp.views import ToDoViewSet, ProjectViewSet
+from rest_framework.authtoken import views
 
 router = DefaultRouter()
 router.register("authors", AuthorModelViewSet)
@@ -15,4 +16,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
 ]
